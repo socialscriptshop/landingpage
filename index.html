@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The TikTok Shop Content Playbook | Social Script Shop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface-2: #1a1a24;
+  --border: #2a2a3a;
+  --text: #e8e8f0;
+  --text-dim: #9090a8;
+  --accent: #3b82f6;
+  --accent-bright: #60a5fa;
+  --accent-glow: rgba(59, 130, 246, 0.15);
+  --green: #22c55e;
+  --red: #ef4444;
+  --orange: #f59e0b;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 720px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  background: var(--accent-glow);
+  border: 1px solid rgba(59,130,246,0.2);
+  padding: 6px 18px;
+  border-radius: 100px;
+  margin-bottom: 32px;
+}
+
+h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(32px, 5.5vw, 54px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+h1 .highlight {
+  background: linear-gradient(135deg, var(--accent-bright), #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--text-dim);
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.75;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 16px 48px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 30px rgba(59,130,246,0.25);
+}
+
+.cta-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 0 40px rgba(59,130,246,0.35);
+}
+
+.cta-note {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* ── SECTION LAYOUT ── */
+section {
+  padding: 80px 24px;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+
+/* ── PROBLEM SECTION ── */
+.problem {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.problem-list {
+  list-style: none;
+  margin-top: 32px;
+}
+
+.problem-list li {
+  padding: 16px 0;
+  padding-left: 36px;
+  position: relative;
+  font-size: 16px;
+  color: var(--text-dim);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.problem-list li:last-child { border-bottom: none; }
+
+.problem-list li::before {
+  content: '✕';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  color: var(--red);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ── STAT CALLOUT ── */
+.stat-bar {
+  background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(167,139,250,0.06));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 48px 40px;
+  text-align: center;
+  margin: 0 24px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-number {
+  font-size: clamp(42px, 7vw, 64px);
+  font-weight: 700;
+  color: var(--accent-bright);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: var(--text-dim);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── WHAT'S INSIDE ── */
+.inside-grid {
+  margin-top: 40px;
+  display: grid;
+  gap: 16px;
+}
+
+.inside-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px 28px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.inside-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.inside-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.inside-card p {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* ── BEFORE / AFTER ── */
+.comparison {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 36px;
+}
+
+@media (max-width: 600px) {
+  .compare-grid { grid-template-columns: 1fr; }
+}
+
+.compare-col {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+}
+
+.compare-col.before { border-top: 3px solid var(--red); }
+.compare-col.after { border-top: 3px solid var(--green); }
+
+.compare-col h3 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.compare-col.before h3 { color: var(--red); }
+.compare-col.after h3 { color: var(--green); }
+
+.compare-col ul {
+  list-style: none;
+}
+
+.compare-col ul li {
+  padding: 8px 0;
+  font-size: 15px;
+  color: var(--text-dim);
+  padding-left: 24px;
+  position: relative;
+}
+
+.compare-col.before ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-weight: 700;
+}
+
+.compare-col.after ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ── WHO THIS IS FOR ── */
+.for-list {
+  margin-top: 32px;
+}
+
+.for-item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.for-item:last-child { border-bottom: none; }
+
+.for-item strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.for-item span {
+  font-size: 15px;
+  color: var(--text-dim);
+}
+
+/* ── PRICING ── */
+.pricing {
+  text-align: center;
+}
+
+.price-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 48px 40px;
+  max-width: 480px;
+  margin: 36px auto 0;
+}
+
+.price-tag {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.price-context {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+}
+
+.price-includes {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.price-includes li {
+  padding: 8px 0;
+  font-size: 15px;
+  color: var(--text-dim);
+  padding-left: 28px;
+  position: relative;
+}
+
+.price-includes li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.price-card .cta-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* ── FAQ ── */
+.faq-list {
+  margin-top: 36px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+}
+
+.faq-item:first-child { border-top: 1px solid var(--border); }
+
+.faq-q {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.faq-a {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* ── FINAL CTA ── */
+.final-cta {
+  text-align: center;
+  padding: 100px 24px;
+  position: relative;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.final-cta h2 {
+  font-size: clamp(28px, 4.5vw, 42px);
+  margin-bottom: 16px;
+}
+
+.final-cta p {
+  color: var(--text-dim);
+  font-size: 17px;
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">For TikTok Shop Sellers</span>
+    <h1>Your TikTok Shop Is Live.<br><span class="highlight">Why Isn't It Selling?</span></h1>
+    <p class="hero-sub">You registered. You listed products. You posted videos. And nothing happened. The problem isn't your product — it's how you're making content for the platform. This playbook fixes that.</p>
+    <a href="https://socialscriptshop.gumroad.com/l/contentplaybook" class="cta-btn">Get the Playbook — $59</a>
+    <span class="cta-note">Instant PDF download. Start making better content today.</span>
+  </div>
+</section>
+
+<!-- ════════ PROBLEM ════════ -->
+<section class="problem">
+  <div class="container">
+    <div class="section-label">The Real Problem</div>
+    <h2>You're making content like it's Instagram. TikTok Shop doesn't work that way.</h2>
+    <p style="color: var(--text-dim); font-size: 16px; margin-bottom: 8px;">Sound familiar?</p>
+    <ul class="problem-list">
+      <li>You post videos but get stuck under 300 views every time</li>
+      <li>You get views but zero yellow cart clicks — nobody's actually buying</li>
+      <li>You don't know how to structure a video that drives sales, not just likes</li>
+      <li>You've watched dozens of YouTube tutorials and still feel lost</li>
+      <li>You're posting randomly with no system and no idea what's working</li>
+      <li>You see other brands blowing up and have no clue what they're doing differently</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ════════ STAT ════════ -->
+<section style="padding: 60px 24px;">
+  <div class="stat-bar">
+    <div class="stat-number">284,000+</div>
+    <div class="stat-label">TikTok Shop sellers in the U.S. are registered but have made <strong style="color: var(--text);">zero sales</strong>. That's 57% of all registered shops. The difference between them and the sellers making money? Content strategy.</div>
+  </div>
+</section>
+
+<!-- ════════ WHAT'S INSIDE ════════ -->
+<section>
+  <div class="container">
+    <div class="section-label">What's Inside</div>
+    <h2>A complete content system — not another generic "how to go viral" guide.</h2>
+    <p style="color: var(--text-dim); margin-bottom: 12px;">Everything in this playbook is specific to TikTok Shop selling. No filler. No fluff. No recycled Instagram advice.</p>
+
+    <div class="inside-grid">
+      <div class="inside-card">
+        <div class="inside-icon">🎯</div>
+        <div>
+          <h3>The TikTok Shop Content Framework</h3>
+          <p>How TikTok Shop content actually works — why it's different from regular TikTok, and the exact structure that turns viewers into buyers.</p>
+        </div>
+      </div>
+      <div class="inside-card">
+        <div class="inside-icon">🪝</div>
+        <div>
+          <h3>Hook Templates That Stop the Scroll</h3>
+          <p>71% of viewers decide to stay or swipe in the first second. Get proven hook formulas designed specifically for product-selling videos.</p>
+        </div>
+      </div>
+      <div class="inside-card">
+        <div class="inside-icon">📝</div>
+        <div>
+          <h3>Ready-to-Use Script Structures</h3>
+          <p>Plug-and-play video scripts for product demos, unboxings, testimonials, and "problem-solution" formats — the ones that actually drive yellow cart clicks.</p>
+        </div>
+      </div>
+      <div class="inside-card">
+        <div class="inside-icon">📊</div>
+        <div>
+          <h3>The Posting System</h3>
+          <p>How often to post, when to post, and how to build a content calendar that keeps you visible to the algorithm without burning out.</p>
+        </div>
+      </div>
+      <div class="inside-card">
+        <div class="inside-icon">🔍</div>
+        <div>
+          <h3>TikTok SEO for Product Discovery</h3>
+          <p>49% of Americans now use TikTok as a search engine. Learn where to place keywords in your captions, voiceovers, and product titles so buyers find you.</p>
+        </div>
+      </div>
+      <div class="inside-card">
+        <div class="inside-icon">🎬</div>
+        <div>
+          <h3>Faceless &amp; Low-Effort Video Strategies</h3>
+          <p>Don't want to be on camera? No problem. Multiple formats for making high-converting content without showing your face or buying expensive equipment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ BEFORE / AFTER ════════ -->
+<section class="comparison">
+  <div class="container">
+    <div class="section-label">The Shift</div>
+    <h2>What changes after you read this.</h2>
+    <div class="compare-grid">
+      <div class="compare-col before">
+        <h3>Before</h3>
+        <ul>
+          <li>Posting randomly and hoping something hits</li>
+          <li>Getting views but no actual sales</li>
+          <li>No idea why some videos die at 300 views</li>
+          <li>Spending hours on videos that don't convert</li>
+          <li>Confused by what "content strategy" even means on TikTok Shop</li>
+        </ul>
+      </div>
+      <div class="compare-col after">
+        <h3>After</h3>
+        <ul>
+          <li>Every video follows a proven sales structure</li>
+          <li>Content designed to drive yellow cart clicks</li>
+          <li>Hooks that stop the scroll in the first second</li>
+          <li>A repeatable system you can execute daily</li>
+          <li>Clear understanding of what the algorithm rewards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ WHO THIS IS FOR ════════ -->
+<section>
+  <div class="container">
+    <div class="section-label">Who This Is For</div>
+    <h2>This was built for sellers, not influencers.</h2>
+    <div class="for-list">
+      <div class="for-item">
+        <strong>Brand owners who registered a TikTok Shop but haven't made sales yet.</strong>
+        <span>You set up the shop, listed products, maybe posted a few videos — and nothing happened. This gets you unstuck.</span>
+      </div>
+      <div class="for-item">
+        <strong>Shopify / Etsy sellers expanding to TikTok Shop.</strong>
+        <span>You know how to sell online, but TikTok is a different game. This teaches you the content side so you're not guessing.</span>
+      </div>
+      <div class="for-item">
+        <strong>Affiliates who want to actually understand content that converts.</strong>
+        <span>You're promoting products but your videos aren't generating commissions. These frameworks show you how to make content that sells.</span>
+      </div>
+      <div class="for-item">
+        <strong>Anyone tired of YouTube tutorials that teach nothing specific.</strong>
+        <span>This is a system, not a vibe. Concrete templates, structures, and strategies — not "just be authentic."</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PRICING ════════ -->
+<section class="pricing">
+  <div class="container">
+    <div class="section-label">Get Started</div>
+    <h2>One playbook. One price. No subscription.</h2>
+    <div class="price-card">
+      <div class="price-tag">$59</div>
+      <div class="price-context">Less than one day of wasted ad spend.</div>
+      <ul class="price-includes">
+        <li>The full TikTok Shop Content Playbook (PDF)</li>
+        <li>Hook templates and script frameworks</li>
+        <li>TikTok SEO keyword placement guide</li>
+        <li>Faceless content strategies</li>
+        <li>Posting system and content calendar framework</li>
+        <li>Instant download — start today</li>
+      </ul>
+      <a href="https://socialscriptshop.gumroad.com/l/contentplaybook" class="cta-btn">Get the Playbook Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FAQ ════════ -->
+<section>
+  <div class="container">
+    <div class="section-label">Questions</div>
+    <h2>Common questions before buying.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is this a course or a PDF?</div>
+        <div class="faq-a">It's a focused PDF playbook. No fluff, no 10-hour video course you'll never finish. Read it, implement it, start seeing results.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">I haven't set up my TikTok Shop yet. Is this still for me?</div>
+        <div class="faq-a">This playbook is focused on the content and selling side — making videos that convert. If you're still in the registration process, you'll want to finish that first, then use this the moment you're ready to start posting.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">I'm an affiliate, not a brand owner. Will this help?</div>
+        <div class="faq-a">Yes. The script structures and hook frameworks work for both brand owners and affiliates. If you're making videos to sell products on TikTok Shop, this applies to you.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I don't want to show my face on camera?</div>
+        <div class="faq-a">The playbook includes multiple faceless content strategies. You don't need to be on camera to make content that sells.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How is this different from free YouTube tutorials?</div>
+        <div class="faq-a">Free content gives you theory. This gives you a system — specific templates, scripts, and structures you can use immediately. No piecing together random tips from 30 different videos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FINAL CTA ════════ -->
+<section class="final-cta">
+  <div class="container" style="position: relative; z-index: 1;">
+    <h2>Stop guessing. Start selling.</h2>
+    <p>Every day you spend posting content without a strategy is a day your competitors get further ahead. The playbook is $59. The cost of figuring it out alone is a lot more.</p>
+    <a href="https://socialscriptshop.gumroad.com/l/contentplaybook" class="cta-btn">Get the Playbook — $59</a>
+    <span class="cta-note">Instant download. No subscription. No upsells.</span>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Social Script Shop. All rights reserved.
+</footer>
+
+</body>
+</html>
