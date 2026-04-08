@@ -460,6 +460,48 @@ h2 {
   margin: 0 auto 36px;
 }
 
+/* ── NAV ── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo {
+  width: 34px;
+  height: 34px;
+}
+
+.nav-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+
+.nav .cta-btn {
+  font-size: 13px;
+  padding: 9px 22px;
+  box-shadow: none;
+}
+
 /* ── FOOTER ── */
 footer {
   text-align: center;
@@ -471,6 +513,14 @@ footer {
 </style>
 </head>
 <body>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="nav-name">Social Script Shop</span>
+  </div>
+  <a href="https://socialscriptshop.gumroad.com/l/contentplaybook" class="cta-btn">Get the Playbook</a>
+</nav>
 
 <!-- ════════ HERO ════════ -->
 <section class="hero">
